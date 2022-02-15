@@ -52,23 +52,22 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .pytest_cache
 
 lint: ## check style with flake8
-	flake8 bmi_topography tests
+	flake8 bmi_topography tests docs examples
 
 pretty: ## reformat files to make them look pretty
-	find bmi_topography tests docs -name '*.py' | xargs isort
-	black bmi_topography tests docs
+	black bmi_topography tests docs examples
 
 test: ## run tests quickly with the default Python
-	pytest --disable-warnings --cov=bmi_topography --cov-report=xml:./coverage.xml -vvv
+	pytest --disable-warnings --cov=bmi_topography --cov-config=./setup.cfg --cov-report=xml:./coverage.xml -vvv
 
 bmi-test: ## run the bmi-tester
 	bmi-test bmi_topography:BmiTopography --config-file=./examples/config.yaml --root-dir=./examples -vvv
 
-coverage: ## check code coverage and display results
+coverage: ## check code coverage quickly with the default Python
 	pytest --cov --cov-report=html
 	$(BROWSER) htmlcov/index.html
 
-docs: ## generate Sphinx HTML docs, including API docs and link check
+docs: ## generate Sphinx HTML documentation, including API docs and link check
 	rm -f docs/source/api/bmi_topography.rst
 	rm -f docs/source/api/modules.rst
 	sphinx-apidoc -o docs/source/api bmi_topography
