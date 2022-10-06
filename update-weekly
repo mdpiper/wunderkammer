@@ -1,0 +1,6 @@
+#!/bin/sh
+# Place this script in /etc/cron.weekly.
+# It should run and update the file `~/weekly.txt` once/week.
+
+/usr/bin/date >> $HOME/weekly.txt
+exit 0
