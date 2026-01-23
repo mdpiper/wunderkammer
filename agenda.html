@@ -1,0 +1,64 @@
+<!-- Experiments in HTML and CSS to make a table. -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .agenda-table {
+        border-collapse: collapse;
+        font-family: Arial, 'Noto Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        width: 75%;
+        max-width: 800px;
+        text-align: center;
+    }
+
+    .agenda-table th {
+        background-color: #acc8f5; /* Light blue header */
+        padding: 15px;
+        border: 1px solid #555;
+        font-weight: bold;
+    }
+
+    .agenda-table td {
+        background-color: #efefef; /* Light gray body */
+        padding: 15px;
+        border: 1px solid #555;
+        height: 60px;
+        vertical-align: middle;
+    }
+</style>
+</head>
+<body>
+
+<table class="agenda-table">
+    <thead>
+        <tr>
+            <th style="width: 10%; background: none; border: none;"></th>
+            <th style="width: 30%">Wednesday January 28</th>
+            <th style="width: 30%">Thursday January 29</th>
+            <th style="width: 30%">Friday January 30</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="2" style="background-color: #ccc">am</td>
+            <td><a href="https://csdms.io/do">What can CSDMS<br>do for you?</a></td>
+            <td rowspan="2"><a href="https://github.com/csdms/diffusion-model">Build a model<br>the CSDMS way</a><br>(cont.)</td>
+            <td><a href="https://csdms.io/bmi">Basic Model Interface</a></td>
+        </tr>
+        <tr>
+            <td rowspan="3"><a href="https://github.com/csdms/diffusion-model">Build a model<br>the CSDMS way</a></td>
+            <td><a href="https://csdms.io/best-practices">Best practices in scientific<br>software development</a></td>
+        </tr>
+        <tr>
+            <td rowspan="2" style="background-color: #ccc">pm</td>
+            <td rowspan="2"><a href="https://landlab.csdms.io/">The Landlab toolkit</a></td>
+            <td style="background: none; border: none;"></td>
+        </tr>
+        <tr>
+            <td style="background: none; border: none;"><br></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
